@@ -1,5 +1,16 @@
+body {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ff7b73;
+  margin: 0;
+  place-items: center;
+}
+
 .App {
   text-align: center;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ff7b73;
 }
 
 .App-logo {
@@ -14,16 +25,21 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff7b73;
+  flex-direction: column;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #282c34;
 }
-
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +52,5 @@
     transform: rotate(360deg);
   }
 }
+
+
