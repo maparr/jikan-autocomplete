@@ -5,12 +5,11 @@ import Results from "./Results/Results";
 import {StyledReactSearchAutocomplete} from "./StyledReactSearchAutocomplete";
 import SearchInput from "./SearchInput/SearchInput";
 import {ThemeProvider} from 'styled-components'
-import {debounce} from "../utils/utils";
+import debounce from "lodash.debounce";
 
 export function ReactSearchAutocomplete(props) {
 
     const {
-        fuseOptions,
         inputDebounce,
         onSearch,
         onSelect,
@@ -32,12 +31,13 @@ export function ReactSearchAutocomplete(props) {
     const transformAPI = async (keyword) => {
         const res = await api(keyword)
         if(res instanceof Error) {
-            setError(res.message);
+            return setError(res.message);
         }
 
         if(!res.results) {
             return ;
         }
+        setError('')
         // console.log(keyword);
         setResults(res.results.map(({title, mal_id}) => ({
             name: title,
@@ -70,7 +70,7 @@ export function ReactSearchAutocomplete(props) {
         <ThemeProvider theme={theme}>
             <GlobalStyle/>
             <StyledReactSearchAutocomplete>
-                <p>{error}</p>
+                <span>{error}</span>
                 <div className="wrapper">
                     <SearchInput
                         searchString={searchString}
