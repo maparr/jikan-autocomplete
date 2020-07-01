@@ -20,13 +20,14 @@ export default function Results(props) {
                 <ul>
                     {
                         results.slice(0, maxResults).map(result =>
-                            <li
+                            result.name && <li
+                                className="ellipsis-container"
                                 key={result.id}
                                 onMouseDown={() => handleOnSelect(result)}
                                 onClick={() => handleOnSelect(result)}
                             >
-                                {showIcon && <div className="icon"><SearchIcon/></div>}
-                                <div className="ellipsis" title={result.name}>
+                                {showIcon && <div className="icon"><img src={result.image_url} alt=""/></div>}
+                                <div name={result.name} className="ellipsis" title={result.name}>
                                     <span dangerouslySetInnerHTML={{
                                         __html: result.name.replace(
                                             new RegExp(`(${searchKeyword})`, 'ig'),

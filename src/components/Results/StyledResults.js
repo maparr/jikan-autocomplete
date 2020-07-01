@@ -33,6 +33,11 @@ const StyledResults = styled.div`
 
       > .icon {
         margin-left: 16px;  
+        
+        img {
+          width: 30px;
+          height: 30px;
+        }
 
         > svg {
           fill: ${props => props.theme.iconColor};
@@ -48,6 +53,10 @@ const StyledResults = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  
+  .ellipsis-container:hover {
+      cursor:pointer;
   }
 `;
 

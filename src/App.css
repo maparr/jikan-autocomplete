@@ -34,11 +34,38 @@ body {
   font-size: calc(10px + 2vmin);
   color: #282c34;
 }
-.title {
-  font-family: 'Roboto', sans-serif;
+.titleA {
+  font-family: 'Roboto';
   font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.title {
+
+  display: flex;
+  justify-content: center;
+}
+
+.title .selectCategory {
+  width: 200px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 340px) {
+  .titleA {
+    display: none;
+  }
+
+  .title .selectCategory {
+    margin-left: 0;
+  }
+}
+
+
+
+.error {
+  color: white;
 }
 .App-link {
   color: #61dafb;
@@ -52,5 +79,4 @@ body {
     transform: rotate(360deg);
   }
 }
-
 

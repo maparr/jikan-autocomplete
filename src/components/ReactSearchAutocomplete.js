@@ -38,10 +38,12 @@ export function ReactSearchAutocomplete(props) {
             return ;
         }
         setError('')
-        // console.log(keyword);
-        setResults(res.results.map(({title, mal_id}) => ({
+
+        setResults(res.results.map(({title, mal_id, url, image_url}) => ({
             name: title,
-            id: mal_id
+            id: mal_id,
+            url,
+            image_url
         })));
     }
 
@@ -66,11 +68,12 @@ export function ReactSearchAutocomplete(props) {
         setResults([result]);
     }
 
+
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyle/>
             <StyledReactSearchAutocomplete>
-                <span>{error}</span>
+                <p className='error'>{error}</p>
                 <div className="wrapper">
                     <SearchInput
                         searchString={searchString}
